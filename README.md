@@ -75,8 +75,15 @@
 ## 开始 
 ### 项目安装
 ```bash
+# 指定 yarn 模块下载源
+yarn config set registry https://registry.npm.taobao.org
+
 # 指定 node-sass 下载源
 yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass 
+
+## 指定 electron 下载源
+yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
+
 yarn install
 ```
 
