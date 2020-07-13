@@ -124,6 +124,10 @@ yarn run test:unit
 
 
 ## 历史记录
+### 2020-07-15
+- 添加 Element UI
+- 添加 全局样式和样式变量
+
 ### 2020-07-11
 - 添加 vue-cli-plugin-electron-builder 
 - 添加 reset-css
