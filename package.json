@@ -5,19 +5,21 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps",
-    "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "postuninstall": "electron-builder install-app-deps"
   },
+  "main": "background.js",
   "dependencies": {
     "chai-as-promised": "^7.1.1",
     "core-js": "^2.6.5",
     "electron": "^9.0.0",
     "electron-devtools-installer": "^3.1.0",
+    "element-ui": "^2.4.5",
     "register-service-worker": "^1.6.2",
     "reset-css": "^5.0.1",
     "vue": "^2.6.10",
@@ -43,6 +45,7 @@
     "@vue/eslint-config-typescript": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
     "chai": "^4.1.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -51,7 +54,11 @@
     "sass-loader": "^8.0.0",
     "spectron": "^11.0.0",
     "typescript": "^3.4.3",
+    "vue-cli-plugin-element": "~1.0.1",
     "vue-template-compiler": "^2.6.10"
+  },
+  "electronDownload": {
+    "mirror": "https://npm.taobao.org/mirrors/electron/"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -61,9 +68,5 @@
       "vue-cli-service lint",
       "git add"
     ]
-  },
-  "electronDownload": {
-    "mirror": "https://npm.taobao.org/mirrors/electron/"
-  },
-  "main": "background.js"
+  }
 }

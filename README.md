@@ -22,6 +22,14 @@
 | │ ├── svg/                    # svg 资源
 │ | └── ...
 │ | 
+│ ├── background/               # Electron 主进程
+| │ ├── platform/               # 系统功能模块
+| │ | ├── [功能a]/              # 功能 a
+| │ | ├── [功能b]/              # 功能 b
+| │ | └── ...
+| | |
+│ | └── main.ts                 # Electron 主进程入口
+│ | 
 │ ├── components/               # 所有组件，共用业务组件和独有业务组件
 | │ ├── base/                   # UI 组件
 | │ ├── common/                 # 公共业务组件
@@ -78,7 +86,6 @@ yarn run serve
 ```
 ### 启动 Electron 开发环境
 ```bash
-# 此处可选科学上网下载调试扩展
 yarn electron:serve
 ```
 
@@ -116,7 +123,12 @@ yarn run test:unit
 
 
 ## 历史记录
+### 2020-07-15
+- 添加 Element UI
+- 添加 全局样式和样式变量
+
 ### 2020-07-11
 - 添加 vue-cli-plugin-electron-builder 
-- 添加 rest-css
+- 添加 reset-css
 - 添加 目录结构文档
+- 添加 主进程目录结构
