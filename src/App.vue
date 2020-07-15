@@ -10,7 +10,7 @@
       <el-button type="primary">el-button</el-button>
       <p>主题色为 {{style.colorPrimary}}</p>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
 
