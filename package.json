@@ -46,6 +46,7 @@
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
     "babel-plugin-component": "^1.1.1",
+    "chromedriver": "^83.0.1",
     "electron": "^9.0.0",
     "electron-devtools-installer": "^3.1.0",
     "eslint": "^6.7.2",

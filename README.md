@@ -85,6 +85,9 @@ yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 # 指定 electron 下载源
 yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
 
+# 指定 chromedriver 下载源
+yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
+
 yarn install
 ```
 
@@ -126,12 +129,14 @@ yarn run test:e2e
 
 ### 运行单元测试
 ```bash
-# 此处需要科学上网
 yarn run test:unit
 ```
 
 
 ## 历史记录
+### 2020-07-15
+- 修改
+
 ### 2020-07-15
 - 添加 Element UI
 - 添加 全局样式和样式变量
