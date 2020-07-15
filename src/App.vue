@@ -21,7 +21,6 @@ import { Button } from 'element-ui';
 import style from '@/assets/css/variable.scss';
 import HelloWorld from '@/components/HelloWorld.vue';
 
-
 Vue.use(Button);
 
 @Component({
