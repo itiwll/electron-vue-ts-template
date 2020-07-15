@@ -1,44 +1,33 @@
-import testWithSpectron from 'vue-cli-plugin-electron-builder/lib/testWithSpectron';
-import chai from 'chai';
-import chaiAsPromised from 'chai-as-promised';
-// eslint-disable-next-line no-undef
-const spectron = __non_webpack_require__('spectron');
+/**
+ * @jest-environment node
+ */
+import spectron from 'spectron';
+import { testWithSpectron } from 'vue-cli-plugin-electron-builder';
 
-chai.should();
-chai.use(chaiAsPromised);
+jest.setTimeout(50000);
 
-describe('Application launch', function applicationLaunch() {
-  this.timeout(30000);
+test('Window Loads Properly', async () => {
+  // Wait for dev server to start
+  const { app, stopServe } = await testWithSpectron(spectron);
+  const win = app.browserWindow;
+  const { client } = app;
 
-  beforeEach(function beforeEach() {
-    return testWithSpectron(spectron).then((instance) => {
-      this.app = instance.app;
-      this.stopServe = instance.stopServe;
-    });
-  });
+  // Window was created
+  expect(await client.getWindowCount()).toBe(1);
+  // It is not minimized
+  expect(await win.isMinimized()).toBe(false);
+  // Window is visible
+  expect(await win.isVisible()).toBe(true);
+  // Size is correct
+  const { width, height } = await win.getBounds();
+  expect(width).toBeGreaterThan(0);
+  expect(height).toBeGreaterThan(0);
+  // App is loaded properly
+  expect(
+    /Welcome to Your Vue\.js (\+ TypeScript )?App/.test(
+      await client.getHTML('#app'),
+    ),
+  ).toBe(true);
 
-  beforeEach(function beforeEach() {
-    chaiAsPromised.transferPromiseness = this.app.transferPromiseness;
-  });
-
-  afterEach(function afterEach() {
-    if (this.app && this.app.isRunning()) {
-      return this.stopServe();
-    }
-    return undefined;
-  });
-
-  it('opens a window', function openWindow() {
-    return this.app.client
-      .getWindowCount()
-      .should.eventually.have.at.least(1)
-      .browserWindow.isMinimized()
-      .should.eventually.be.false.browserWindow.isVisible()
-      .should.eventually.be.true.browserWindow.getBounds()
-      .should.eventually.have.property('width')
-      .and.be.above(0)
-      .browserWindow.getBounds()
-      .should.eventually.have.property('height')
-      .and.be.above(0);
-  });
+  await stopServe();
 });

@@ -37,13 +37,13 @@
 | │ |── [页面b]/                # 页面 b 业务组件
 | │ └── ...
 | |
+│ ├── router/                   # 路由配置
 │ ├── store/                    # store 数据
 │ ├── views/                    # 页面组件
 │ ├── App.vue                   # VUE App 入口
 │ ├── background.ts             # Electron 主进程入口文件
 │ ├── main.ts                   # Web 和 Electron 渲染进程入口文件
 │ ├── registerServiceWorker.ts  # PWA worker 注册
-│ ├── router.ts                 # 路由
 │ ├── shims-tsx.d.ts            # tsx 文件声明
 │ ├── shims-vue.d.ts            # vue 文件声明
 │ └── ...
@@ -81,8 +81,11 @@ yarn config set registry https://registry.npm.taobao.org
 # 指定 node-sass 下载源
 yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass 
 
-## 指定 electron 下载源
+# 指定 electron 下载源
 yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
+
+# 指定 chromedriver 下载源
+yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
 
 yarn install
 ```
@@ -124,12 +127,15 @@ yarn run test:e2e
 ```
 
 ### 运行单元测试
-```
+```bash
 yarn run test:unit
 ```
 
 
 ## 历史记录
+### 2020-07-15
+- 修改
+
 ### 2020-07-15
 - 添加 Element UI
 - 添加 全局样式和样式变量
