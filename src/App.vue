@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png" />
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -10,7 +10,7 @@
       <el-button type="primary">el-button</el-button>
       <p>主题色为 {{style.colorPrimary}}</p>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
@@ -21,8 +21,8 @@ import { Button } from 'element-ui';
 import style from '@/assets/css/variable.scss';
 import HelloWorld from '@/components/HelloWorld.vue';
 
-Vue.use(Button);
 
+Vue.use(Button);
 
 @Component({
   components: {
@@ -30,15 +30,15 @@ Vue.use(Button);
   },
 })
 export default class App extends Vue {
-  name= 'app';
+  name = 'app';
 
-  style= style;
+  style = style;
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
