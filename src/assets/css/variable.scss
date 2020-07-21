@@ -1,6 +1,8 @@
-$--color-primary: orange;
+// 主题色
+$colorPrimary: orange;
 
+// Element UI 主题色
 
 :export {
-  colorPrimary: $--color-primary;
-} 
+  colorPrimary: $colorPrimary;
+}
