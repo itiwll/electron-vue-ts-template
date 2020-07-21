@@ -26,5 +26,10 @@
 
   // 代码格式化工具
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.enable": true
+  "eslint.enable": true,
+
+  // 文件头部注释
+  "fileheader.configObj": {
+    "autoAdd": false
+  }
 }
