@@ -4,11 +4,19 @@
   // for the documentation about the extensions.json format
 
   "recommendations": [
+    // Js 风格检查和修复扩展
+    "dbaeumer.vscode-eslint",
 
     // Js 风格检查和修复扩展
     "dbaeumer.vscode-eslint",
-    
-    // Js 风格检查和修复扩展
-    "dbaeumer.vscode-eslint"
+
+    // Vue
+    "octref.vetur",
+
+    // 注释扩展
+    "joelday.docthis",
+
+    // 文件头注释扩展
+    "obkoro1.korofileheader"
   ]
 }

@@ -1,8 +1,15 @@
 // Style 变量
-@import './variable.scss';
+@import "./variable.scss";
 
-/* 改变 icon 字体路径变量，必需 */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+/* Element UI End */
+@import "./element-ui-theme.scss";
 
-// Eleement UI 主题
-@import "~element-ui/packages/theme-chalk/src/index";
+// 输入框光标颜色
+// References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
+@supports (-webkit-mask: none) and (not (cater-color: $colorPrimary)) {
+  .el-input {
+    input {
+      color: $colorPrimary;
+    }
+  }
+}
