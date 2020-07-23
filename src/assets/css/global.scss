@@ -4,6 +4,17 @@
 /* Element UI End */
 @import "./element-ui-theme.scss";
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --colorPrimary: $colorPrimary;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorPrimary: $darkColorPrimary;
+  }
+}
+
 // 输入框光标颜色
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
 @supports (-webkit-mask: none) and (not (cater-color: $colorPrimary)) {

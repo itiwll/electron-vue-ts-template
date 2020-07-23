@@ -1,16 +1,14 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { AppState } from './app'
+import { UserState } from './user'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+export interface RootState {
+  app: AppState;
+  user: UserState;
+}
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
-});
+// Declare empty store first, dynamically register all modules later.
+export default new Vuex.Store<RootState>({});

@@ -1,0 +1,16 @@
+/*
+ * @Author: eson
+ * @Description: 暗色主题颜色，变量使用小驼峰命名
+ */
+
+/* 主题色 */
+$colorPrimary: orange;
+
+$viewBackgroundColor: #000;
+
+// Element UI 主题色
+
+:export {
+  colorPrimary: $colorPrimary;
+  viewBackgroundColor: $viewBackgroundColor;
+}
