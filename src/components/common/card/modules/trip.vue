@@ -1,22 +1,21 @@
 <!--
  * @Author: your name
- * @Date: 2020-07-22 17:43:53
- * @LastEditTime: 2020-07-25 10:32:43
+ * @Date: 2020-07-25 08:57:08
+ * @LastEditTime: 2020-07-25 10:30:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \x\src\views\Imsg.vue
+ * @FilePath: \x\src\components\common\card\modules\trip.vue
 --> 
 <template>
 <div>
-  消息主页
-  <router-view />
+  出行卡片内容部分
 </div>
 </template>
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-// name: 
+name: 'trip',
 // components: {
 // },
 })

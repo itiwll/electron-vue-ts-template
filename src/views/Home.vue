@@ -1,17 +1,19 @@
 <template>
   <div>
     <Top-bar />
-    <router-view />
+    <Home-container />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TopBar from '@/components/common/TopBar.vue'; // @ is an alias to /src
+import TopBar from '@/components/common/TopBar.vue';
+import HomeContainer from '@/components/base/HomeContainer.vue';
 
 @Component({
   components: {
     TopBar,
+    HomeContainer,
   },
 })
 export default class Home extends Vue {}

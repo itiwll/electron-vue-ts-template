@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-22 11:40:10
- * @LastEditTime: 2020-07-22 17:59:10
+ * @LastEditTime: 2020-07-23 11:25:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\common\MainMenu.vue
@@ -37,14 +37,16 @@ export default class Home extends Vue {
 }
 ul{
   list-style: none;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding:0;
   li{
   width: 30px;
   height: 30px;
   background-color: pink;
-  display: block;
   margin-bottom: 50px;
   border-radius: 8px;
-  margin-left: -15px;
   .a{
     display: block;
     width: 100%;
