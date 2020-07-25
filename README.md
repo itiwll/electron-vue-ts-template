@@ -2,6 +2,79 @@
 
 基于 VUE Cli 工具生成的项目修改。
 
+## 开始
+
+### 项目安装
+
+```bash
+# 指定 yarn 模块下载源
+yarn config set registry https://registry.npm.taobao.org
+
+# 指定 node-sass 下载源
+yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+
+# 指定 electron 下载源
+yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
+
+# 指定 chromedriver 下载源
+yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
+
+yarn install
+```
+
+### 启动 Web 开发环境
+
+```
+yarn run serve
+```
+
+### 启动 Electron 开发环境
+
+```bash
+yarn electron:serve
+```
+
+## 打包
+
+### Web 端打包
+
+```
+yarn run build
+```
+
+### Electron 打包
+
+```bash
+# 此处需要科学上网
+yarn run electron:build
+```
+
+## 测试
+
+### 运行测试
+
+```
+yarn run test
+```
+
+### 运行 Lints 和 修复文件
+
+```
+yarn run lint
+```
+
+### 运行 e2e 测试
+
+```
+yarn run test:e2e
+```
+
+### 运行单元测试
+
+```bash
+yarn run test:unit
+```
+
 ## 文件结构
 
 ```bash
@@ -79,86 +152,42 @@
 - NODE_ENV 环境模式
 - BASE_URL 根路径
 - VUE_APP_TITLE 应用标题
-- VUE*APP*[...] 其他
+- VUE_APP\_[...] 其他
 
-## 开始
+## 样式
 
-### 项目安装
+### 样式开发
 
-```bash
-# 指定 yarn 模块下载源
-yarn config set registry https://registry.npm.taobao.org
+封开或发装组件时使用 css 变量 `var(--variable, $variable)` 变量设置或覆盖 UI 库文本、背景、边框等颜色。
 
-# 指定 node-sass 下载源
-yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+- 全局样式 `src/assets/css/global.scss`
+- 亮色模式颜色变量 `src/assets/css/color-light.scss`
+- 暗色模式颜色变量 `src/assets/css/color-dark.scss`
+- 其他变量 `src/assets/css/variable.scss`
 
-# 指定 electron 下载源
-yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
+SCSS 中使用:
 
-# 指定 chromedriver 下载源
-yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
-
-yarn install
+```css
+color: var(--colorPrimary, $colorPrimary);
+background-color: var(--colorBackgroundBase, $colorBackgroundBase);
 ```
 
-### 启动 Web 开发环境
+### 主题切换
 
-```
-yarn run serve
-```
+切换主题:
 
-### 启动 Electron 开发环境
-
-```bash
-yarn electron:serve
+```javascript
+import { AppModule } from "@/store/app";
+AppModule.SetTheme(theme);
 ```
 
-## 打包
+## Todo
 
-### Web 端打包
-
-```
-yarn run build
-```
-
-### Electron 打包
-
-```bash
-# 此处需要科学上网
-yarn run electron:build
-```
-
-## 测试
-
-### 运行测试
-
-```
-yarn run test
-```
-
-### 运行 Lints 和 修复文件
-
-```
-yarn run lint
-```
-
-### 运行 e2e 测试
-
-```
-yarn run test:e2e
-```
-
-### 运行单元测试
-
-```bash
-yarn run test:unit
-```
+- [ ] css 变量向下兼容
 
 ## 历史记录
 
 ### 2020-07-15
-
-- 修改
 
 ### 2020-07-15
 

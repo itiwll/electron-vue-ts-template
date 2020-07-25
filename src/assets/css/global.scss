@@ -4,15 +4,20 @@
 /* Element UI End */
 @import "./element-ui-theme.scss";
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --colorPrimary: $colorPrimary;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --colorPrimary: $darkColorPrimary;
-  }
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     --colorPrimary: $colorPrimary;
+//   }
+// }
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --colorPrimary: $darkColorPrimary;
+//   }
+// }
+
+body {
+  background-color: var(--colorBackgroundRegular);
+  color: var(--colorTextPrimary);
 }
 
 // 输入框光标颜色

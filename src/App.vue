@@ -10,17 +10,24 @@
 import Vue from "vue";
 import { Button } from "element-ui";
 import style from "@/assets/css/variable.scss";
-import { Watch } from "vue-property-decorator";
+import { Watch, Component } from "vue-property-decorator";
 import { RouteRecord } from "vue-router";
+import { AppModule } from "./store/app";
+import { getTheme } from "./utils/local-store";
 
 Vue.use(Button);
 
+@Component
 export default class App extends Vue {
   name = "app";
 
   style = style;
 
   transitionName = "slide-left";
+
+  created() {
+    AppModule.SetTheme(getTheme() || "auto");
+  }
 
   @Watch("$route")
   routeChange(to: RouteRecord, from: RouteRecord) {
@@ -37,7 +44,7 @@ export default class App extends Vue {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: var(--colorFrontDefault);
   margin-top: 60px;
 
   .fade-enter-active,
