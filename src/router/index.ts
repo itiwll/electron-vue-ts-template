@@ -1,25 +1,11 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
-import example from './example';
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    meta: { hidden: true },
-    component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue'),
-  },
-  example,
-];
-
+const moduleFiles = require.context('../router', false, /^(?!.*(?:index|test)\.ts).*\.ts$/);
+const modules = moduleFiles.keys().map(path => moduleFiles(path).default);
+const routes: Array<RouteConfig> = modules
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
