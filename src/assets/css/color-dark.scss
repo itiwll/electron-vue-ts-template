@@ -1,0 +1,58 @@
+/*
+ * @Author: eson
+ * @Description: 暗色主题颜色，变量使用小驼峰命名
+ */
+
+/* 主题色 */
+$colorPrimary: orange;
+
+/* 实用色彩 */
+$colorSuccess: #67c23a !default; // 成功颜色
+$colorWarning: #e6a23c !default; // 警告颜色
+$colorDanger: #f56c6c !default; // 危险颜色
+$colorInfo: #909399 !default; // 信息颜色
+
+/* 字体颜色 */
+$colorTextPrimary: #fff !default; // 主要文字颜色
+$colorTextRegular: #ddd !default; // 常见文字颜色
+$colorTextSecondary: #ccc !default; // 次要文字颜色
+$colorTextPlaceholder: #333 !default; // 占位文字颜色
+$colorTextDisabled: #333 !default; // 禁用文字颜色
+
+/* 边框颜色 */
+$colorBorderBase: #444 !default; // 基本边框颜色
+$colorBorderDisabled: #222 !default; // 禁用边框颜色
+$colorBorderLighter: $colorPrimary !default; // 高亮边框颜色
+
+/* 背景颜色 */
+$colorBackgroundBase: #111 !default; // 主要背景色
+$colorBackgroundRegular: #333 !default; // 常用背景色
+$colorBackgroundDisabled: #666 !default; // 禁用背景颜色
+
+:export {
+  /* 主题色 */
+  colorPrimary: $colorPrimary;
+
+  /* 实用色彩 */
+  colorSuccess: $colorSuccess;
+  colorWarning: $colorWarning;
+  colorDanger: $colorDanger;
+  colorInfo: $colorInfo;
+
+  /* 字体颜色 */
+  colorTextPrimary: $colorTextPrimary;
+  colorTextRegular: $colorTextRegular;
+  colorTextSecondary: $colorTextSecondary;
+  colorTextPlaceholder: $colorTextPlaceholder;
+  colorTextDisabled: $colorTextDisabled;
+
+  /* 边框颜色 */
+  colorBorderBase: $colorBorderBase;
+  colorBorderDisabled: $colorBorderDisabled;
+  colorBorderLighter: $colorBorderLighter;
+
+  /* 背景颜色 */
+  colorBackgroundBase: $colorBackgroundBase;
+  colorBackgroundRegular: $colorBackgroundRegular;
+  colorBackgroundDisabled: $colorBackgroundDisabled;
+}

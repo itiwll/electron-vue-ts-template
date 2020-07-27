@@ -14,9 +14,6 @@
     "octref.vetur",
 
     // 注释扩展
-    "joelday.docthis",
-
-    // 文件头注释扩展
     "obkoro1.korofileheader"
   ]
 }

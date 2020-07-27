@@ -2,15 +2,61 @@
   <div class="view-example">
     <h2>示例页面组件</h2>
     <p class>页面组件主要包括布局和子组件</p>
-    <code>123</code>
+    <gx-select :value="theme" @change="setTheme">
+      <el-option
+        v-for="item in themeList"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value"
+      />
+    </gx-select>
+    <p>{{ theme }}</p>
+    <p>
+      <gx-input />
+    </p>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Vue from "vue";
+import Component from "vue-class-component";
+import { AppModule } from "@/store/app";
+import GxSelect from "@/components/base/gx-select.vue";
+import GxInput from "@/components/base/gx-input.vue";
 
-@Component
+@Component({
+  components: { GxSelect, GxInput },
+})
 export default class Example extends Vue {
+  themeList = [
+    { label: "自动", value: "auto" },
+    {
+      label: "暗色",
+      value: "dark",
+    },
+    {
+      label: "亮色",
+      value: "light",
+    },
+  ];
 
+  get theme() {
+    return AppModule.theme;
+  }
+
+  /**
+   * @description: 设置皮肤
+   * @param {string} theme auto|light|dark
+   */
+
+  setTheme(theme: string) {
+    AppModule.SetTheme(theme);
+  }
 }
 </script>
+<style lang="scss" scoped>
+@import "@/assets/css/variable.scss";
+.view-example {
+  padding: 10px;
+  background-color: var(--colorBackgroundBase, $colorBackgroundBase);
+}
+</style>

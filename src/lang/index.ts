@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
-import { getLanguage } from '@/utils/token'
+import { getLanguage } from '@/utils/local-store'
 
 // element-ui built-in lang
 import elementEnLocale from 'element-ui/lib/locale/lang/en'
