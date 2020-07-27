@@ -46,6 +46,7 @@ export default class App extends Vue {
   text-align: center;
   color: var(--colorFrontDefault);
   margin-top: 60px;
+  height: 100%;
 
   .fade-enter-active,
   .fade-leave-active {
@@ -71,5 +72,4 @@ export default class App extends Vue {
     -webkit-transform: translate(-30px, 0);
     transform: translate(-30px, 0);
   }
-}
 </style>

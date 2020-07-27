@@ -1,6 +1,4 @@
-# Electron Typescript Vue 项目模版
-
-基于 VUE Cli 工具生成的项目修改。
+# Galaxy X 的 Window、Mac 和 Web 客户端
 
 ## 开始
 
@@ -154,7 +152,17 @@ yarn run test:unit
 - VUE_APP_TITLE 应用标题
 - VUE_APP\_[...] 其他
 
+<<<<<<< HEAD
 ## 样式
+=======
+## 组件布局
+通用基础Ui单部件组件: 搜索栏, tag, 图标, 按钮, 日历
+
+
+
+
+## 开始
+>>>>>>> develop
 
 ### 样式开发
 
