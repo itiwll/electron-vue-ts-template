@@ -158,7 +158,7 @@ yarn run test:unit
 
 ### 样式开发
 
-封开或发装组件时使用 css 变量 `var(--variable, $variable)` 变量设置或覆盖 UI 库文本、背景、边框等颜色。
+封装开或发装组件时使用 css 变量 `var(--variable, $variable)` 变量设置或覆盖 UI 库文本、背景、边框等颜色。
 
 - 全局样式 `src/assets/css/global.scss`
 - 亮色模式颜色变量 `src/assets/css/color-light.scss`
@@ -182,8 +182,8 @@ AppModule.SetTheme(theme);
 ```
 
 ## Todo
-
 - [ ] css 变量向下兼容
+- [ ] 多 css 入口
 
 ## 历史记录
 
