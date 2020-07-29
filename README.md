@@ -182,7 +182,6 @@ src/views/Example.vue
 ```ts
 // ✔
 class Login extends Vue {
-  userName = "用户名"
   login(){}
   submitForm(){}
 }
