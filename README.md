@@ -17,6 +17,12 @@ yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
 
 yarn install
 ```
+或者使用 tyarn
+```bash
+npm install yarn tyarn -g
+# tyarn 使用淘宝源
+tyarn install
+```
 
 ### 启动 Web 开发环境
 
