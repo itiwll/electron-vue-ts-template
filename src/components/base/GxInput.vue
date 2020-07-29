@@ -9,21 +9,20 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Input } from "element-ui";
-import { Model } from "vue-property-decorator";
 
+debugger;
 Vue.use(Input);
 
 @Component({
   name: "gx-input",
 })
 export default class GxInput extends Vue {
-  //  currentValue = "";
-  // input(v: string) {
-  //   this.currentValue = v;
-  //   this.$emit("input", v);
-  // }
-  @Model("value")
-  value: string | undefined;
+  currentValue = "";
+
+  input(v: string) {
+    this.currentValue = v;
+    this.$emit("input", v);
+  }
 }
 </script>
 <style lang="scss">
