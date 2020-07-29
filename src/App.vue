@@ -72,4 +72,5 @@ export default class App extends Vue {
     -webkit-transform: translate(-30px, 0);
     transform: translate(-30px, 0);
   }
+}
 </style>

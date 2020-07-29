@@ -1,9 +1,7 @@
 # Galaxy X 的 Window、Mac 和 Web 客户端
 
 ## 开始
-
 ### 项目安装
-
 ```bash
 # 指定 yarn 模块下载源
 yarn config set registry https://registry.npm.taobao.org
@@ -90,8 +88,10 @@ yarn run test:unit
 ├── src/
 │ ├── assets/                   # 资源文件夹，样式、图片、字体、svg
 | │ ├── css/                    # 所有 SASS 资源
-| │ | ├── global.scss           # 全局 CSS
-| │ | ├── element-ui-theme.scss # Element UI 主题
+| │ | ├── color-dark.scss       # 暗色色彩变量
+| │ | ├── color-light.scss      # 亮色色彩变量
+| │ | ├── global.scss           # 全局 CSS, main.ts 将引入 global.scss
+| │ | ├── element-ui-theme.scss # Element UI 主题变量覆盖
 | │ | └── variable.scss         # SASS 变量和 Function 等
 | │ ├── img/                    # 图片资源
 | │ ├── svg/                    # svg 资源
@@ -152,18 +152,70 @@ yarn run test:unit
 - VUE_APP_TITLE 应用标题
 - VUE_APP\_[...] 其他
 
-<<<<<<< HEAD
-## 样式
-=======
-## 组件布局
+## 组件
+### 组建规划
 通用基础Ui单部件组件: 搜索栏, tag, 图标, 按钮, 日历
+### 组件开发风格规范
+此规范的目的是为了保持编码风格一致，降低代码阅读成本，提高团队协作效率，便于后人优化维护，输出高质量的文档。
+#### 命名规范
+##### 1. 组建文件名或文件夹名以大驼峰格式命名
+```
+// ✖
+src/component/base/gx-input.vue
+src/component/base/gx-calendar/index.vue
+src/component/base/gx-calemdat/GxCalendarMonth.vue
+src/views/example-view.vue
+
+// ✔
+src/component/base/GxInput.vue
+src/component/base/GxCalendar/index.vue
+src/component/base/GxCalemdat/GxCalendarMonth.vue
+src/views/Example.vue
+```
+
+##### 2. 组件在 vue 模版中使用时使用小写字母，使用`-`分割
+```
+// ✔
+<gx-input></gx-input>
+```
+##### 3. method 方法命名使用小驼峰式命名，统一使用动词或者动词加名词的形式
+```ts
+// ✔
+class Login extends Vue {
+  userName = "用户名"
+  login(){}
+  submitForm(){}
+}
+```
+##### 4. prop 命名使用小驼峰式命名定义，在 vue 模版中使用小写字母和`-`分割来使用
+```
+// ✖
+<loginForm></loginForm>
+
+// ✔
+<login-form></login-form>
+```
+##### 5. `$emit` 事件使用小驼峰式命
+##### 6. `$ref` 使用小驼峰式命名
+#### 分类
+##### 1. UI 组件
+基本 UI 组件，比如：输入框、按钮、图标等。
+- 单一职责
+- 可复用/通用，数据解耦
+- 可单元测试
+存放路径:`src/components/base/`
+##### 2. 公共业务组件
+实现单一功能的、被多个视图公用的业务组件，比如登录表单`LoginFrom`、待办事项列表`TaskList`。
+存放路径:`src/components/common/`
+##### 3. 视图业务组件
+实现当前视图内的业务逻辑组件。
+存放路径:`src/components/[视图名称]/`
+##### 3. 视图组件
+及页面组件，仅包含页面布局、路由逻辑。
+存放路径:`src/views/`
 
 
-
-
-## 开始
->>>>>>> develop
-
+## 样式
 ### 样式开发
 
 封装开或发装组件时使用 css 变量 `var(--variable, $variable)` 变量设置或覆盖 UI 库文本、背景、边框等颜色。
