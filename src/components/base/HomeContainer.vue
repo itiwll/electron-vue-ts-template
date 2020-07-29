@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 11:38:57
- * @LastEditTime: 2020-07-28 10:39:20
+ * @LastEditTime: 2020-07-29 09:47:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\base\HomeContainer.vue
@@ -12,8 +12,8 @@
       <div class="home-container-left-header">
         首页左边头部组件
       </div>
-        <Waterfall-flow :col="6">
-          <Card v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]"></Card>
+        <Waterfall-flow :col="3">
+          <Card v-for="(item,index) in dataList" :key="index" :item="dataList[index]"></Card>
         </Waterfall-flow>
       </div>
     <div class="home-container-right">
