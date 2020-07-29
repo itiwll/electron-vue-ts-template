@@ -10,7 +10,7 @@
   <div class="home-container">
     <div class="home-container-left">
       <div class="home-container-left-header">
-        首页左边头部组件
+        首页左边头部组件内容
       </div>
         <Waterfall-flow :col="3">
           <Card v-for="(item,index) in dataList" :key="index" :item="dataList[index]"></Card>
