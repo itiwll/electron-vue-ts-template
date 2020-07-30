@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 11:38:57
- * @LastEditTime: 2020-07-25 14:54:51
+ * @LastEditTime: 2020-07-29 13:48:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\base\HomeContainer.vue
@@ -12,7 +12,8 @@
       <div class="home-container-left-header">
         首页左边头部组件
       </div>
-        <Card class="card" v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]" ></Card>
+        <Gx-Button />
+        <!-- <Card class="card" v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]" ></Card> -->
       </div>
     <div class="home-container-right">
       首页右边内容组件
@@ -22,14 +23,18 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import Card from '@/components/common/card/index.vue';
+import GxButton from "@/components/base/GxButton.vue";
 
 @Component({
 name:'HomeContainer',
 components: {
   Card,
+  GxButton,
 },
 })
 export default class Home extends Vue {
+  // input = '';
+
   dataList: object[] = [
     {
       type: 'common',
