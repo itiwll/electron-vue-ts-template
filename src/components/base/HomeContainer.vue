@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 11:38:57
- * @LastEditTime: 2020-07-29 13:48:54
+ * @LastEditTime: 2020-07-30 14:48:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\base\HomeContainer.vue
@@ -10,10 +10,9 @@
   <div class="home-container">
     <div class="home-container-left">
       <div class="home-container-left-header">
-        首页左边头部组件
+        首页左边头部组件内容
       </div>
-        <Gx-Button />
-        <!-- <Card class="card" v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]" ></Card> -->
+        <Card class="card" v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]" ></Card>
       </div>
     <div class="home-container-right">
       首页右边内容组件
@@ -23,13 +22,11 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import Card from '@/components/common/card/index.vue';
-import GxButton from "@/components/base/GxButton.vue";
 
 @Component({
 name:'HomeContainer',
 components: {
   Card,
-  GxButton,
 },
 })
 export default class Home extends Vue {
@@ -52,6 +49,52 @@ export default class Home extends Vue {
       type: 'travel',
       title: '周末去哪玩',
       data:[
+        {
+          type: 0,
+          des: '佛山往哪里',
+          price: '99',
+        },
+        {
+          type: 1,
+          des: '4折享好店',
+        },
+        {
+          type: 2,
+          des: '已减100元',
+          price: '99元起',
+        },
+      ]
+    },
+    {
+      type: 'common',
+      title: '标题',
+    },
+    {
+      type: 'trip',
+      title: '出行服务',
+      data:{
+        origin: '人间',
+        destination: '天堂'
+      }
+    },
+    {
+      type: 'travel',
+      title: '周末去哪玩',
+      data:[
+        {
+          type: 0,
+          des: '佛山往哪里',
+          price: '99',
+        },
+        {
+          type: 1,
+          des: '4折享好店',
+        },
+        {
+          type: 2,
+          des: '已减100元',
+          price: '99元起',
+        },
         {
           type: 0,
           des: '佛山往哪里',
@@ -151,17 +194,10 @@ export default class Home extends Vue {
       border-radius: 15px;
     }
     .home-container-left-content{
-      width: 100%;
+      width:100%;
       height: 100%;
-      // position: relative;
       display: flex;
       flex-wrap:wrap;
-      .card{
-        width: 18%;
-        margin: 10px 10px;
-        float: left;
-        // position: absolute;
-      }
     }
   }
 }

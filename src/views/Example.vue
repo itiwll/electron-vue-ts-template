@@ -21,8 +21,8 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { AppModule } from "@/store/app";
-import GxSelect from "@/components/base/gx-select.vue";
-import GxInput from "@/components/base/gx-input.vue";
+import GxSelect from "@/components/base/GxSelect.vue";
+import GxInput from "@/components/base/GxInput.vue";
 import GxButton from "@/components/base/GxButton.vue";
 
 @Component({
