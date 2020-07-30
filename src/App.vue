@@ -71,6 +71,5 @@ export default class App extends Vue {
     opacity: 0;
     -webkit-transform: translate(-30px, 0);
     transform: translate(-30px, 0);
-  }
-}
+  }}
 </style>

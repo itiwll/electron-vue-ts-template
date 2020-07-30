@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 11:38:57
- * @LastEditTime: 2020-07-29 09:47:12
+ * @LastEditTime: 2020-07-30 14:48:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\base\HomeContainer.vue
@@ -12,9 +12,7 @@
       <div class="home-container-left-header">
         首页左边头部组件内容
       </div>
-        <Waterfall-flow :col="3">
-          <Card v-for="(item,index) in dataList" :key="index" :item="dataList[index]"></Card>
-        </Waterfall-flow>
+        <Card class="card" v-for="(item,index) in dataList" :key="index" :dataList="dataList[index]" ></Card>
       </div>
     <div class="home-container-right">
       首页右边内容组件
@@ -24,16 +22,16 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import Card from '@/components/common/card/index.vue';
-import WaterfallFlow from '@/components/common/WaterfallFlow.vue';
 
 @Component({
 name:'HomeContainer',
 components: {
   Card,
-  WaterfallFlow,
 },
 })
 export default class Home extends Vue {
+  // input = '';
+
   dataList: object[] = [
     {
       type: 'common',
