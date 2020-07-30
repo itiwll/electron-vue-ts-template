@@ -13,7 +13,7 @@
     <p>{{ theme }}</p>
     <p>
       <gx-input />
-      <gx-button @clickButton="login" >成功按钮</gx-button>
+      <gx-button @clickButton="login" icon="el-icon-edit">成功按钮</gx-button>
     </p>
   </div>
 </template>
@@ -54,7 +54,7 @@ export default class Example extends Vue {
     AppModule.SetTheme(theme);
   }
 
-  login(data: any){
+  login(){
     // console.log(data);
   }
 }
