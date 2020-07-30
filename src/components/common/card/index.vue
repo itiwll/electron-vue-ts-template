@@ -1,16 +1,16 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 14:47:53
- * @LastEditTime: 2020-07-25 10:52:23
+ * @LastEditTime: 2020-07-29 09:44:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \x\src\components\common\Card.vue
 --> 
 <template>
   <div class="card">
-    <headTitle v-if="dataList.type != 'common'" :data = "dataList" />
+    <headTitle v-if="item.type != 'common'" :data = "item" />
     <!-- <div class="card-content"> -->
-      <components :is="componentName"></components>
+      <components :is="componentName" :item = "item"></components>
     <!-- </div> -->
   </div>
 </template>
@@ -31,9 +31,9 @@ components: {
 },
 })
 export default class Home extends Vue {
-  @Prop() dataList!: any;
+  @Prop() item!: any;
   
-  componentName = this.dataList.type;
+  componentName = this.item.type;
 }
 </script>
 <style lang='scss' scoped>
