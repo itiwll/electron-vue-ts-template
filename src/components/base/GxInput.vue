@@ -10,7 +10,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Input } from "element-ui";
 
-debugger;
 Vue.use(Input);
 
 @Component({
