@@ -12,6 +12,8 @@
     // 注释扩展
     "obkoro1.korofileheader",
     // 格式化扩展
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    // 代码片段扩展
+    "dsznajder.es7-react-js-snippets"
   ]
 }

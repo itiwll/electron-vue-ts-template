@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-view">
     <login-form />
   </div>
 </template>
@@ -10,7 +10,7 @@ import Component from "vue-class-component";
 import LoginForm from "@/components/login/LoginForm.vue";
 
 @Component({
-  components: { LoginForm }
+  components: { LoginForm },
 })
 export default class Login extends Vue {}
 </script>

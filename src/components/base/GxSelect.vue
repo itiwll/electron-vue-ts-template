@@ -1,6 +1,6 @@
 <template>
   <el-select
-    class="gx-select"
+    :class="className"
     v-bind="$attrs"
     v-on="$listeners"
     :value="$attrs.value"
@@ -21,7 +21,11 @@ Vue.use(Select);
 @Component({
   name: "gx-select",
 })
-export default class GxSelect extends Vue {}
+export default class GxSelect extends Vue {
+  get className() {
+    return `gx-select ${this.$attrs.class || ""}`;
+  }
+}
 
 export const GxOption = Option;
 </script>

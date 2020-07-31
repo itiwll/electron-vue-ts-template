@@ -1,5 +1,11 @@
 <template>
-  <el-input class="gx-input" v-bind="$attrs" v-on="$listeners">
+  <el-input
+    :class="className"
+    v-bind="$attrs"
+    v-on="$listeners"
+    :value="currentValue"
+    @input="input"
+  >
     <template v-for="slot in Object.keys($scopedSlots)" :slot="slot" slot-scope="scope">
       <slot :name="slot" v-bind="scope" />
     </template>
@@ -17,6 +23,10 @@ Vue.use(Input);
 })
 export default class GxInput extends Vue {
   currentValue = "";
+
+  get className() {
+    return `gx-input ${this.$attrs.class || ""}`;
+  }
 
   input(v: string) {
     this.currentValue = v;

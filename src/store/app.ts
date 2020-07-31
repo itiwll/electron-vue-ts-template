@@ -1,5 +1,5 @@
 import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-decorators';
-import { getSidebarStatus, getSize, setSidebarStatus, setLanguage, setSize, getTheme } from '@/utils/local-store';
+import { getSidebarStatus, getSize, setSidebarStatus, setLanguage, setSize, getTheme, setTheme } from '@/utils/local-store';
 import { getLocale } from '@/lang';
 import store from '@/store';
 import { applyTheme } from '@/utils/theme';
@@ -73,6 +73,7 @@ class App extends VuexModule implements AppState {
   @Mutation
   private SET_THEME(theme: string) {
     this.theme = theme
+    setTheme(theme);
     applyTheme(theme);
   }
 
