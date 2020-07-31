@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-07-22 11:41:05
- * @LastEditTime: 2020-07-22 17:09:46
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \x\src\components\common\TopBar.vue
---> 
 <template>
   <div class="topbar">
     <div class="back">
@@ -22,8 +14,7 @@
         <span>好物</span>
       </div>
       <div class="search">
-        <el-input placeholder="搜索" size="mini" prefix-icon="el-icon-search" >
-        </el-input>
+        <el-input placeholder="搜索" size="mini" prefix-icon="el-icon-search"></el-input>
       </div>
     </div>
     <div class="back">
@@ -34,47 +25,43 @@
   </div>
 </template>
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-// import HelloWorld from '@/components/HelloWorld.vue';
+import { Component, Vue } from "vue-property-decorator";
+
 @Component({
-// name: 
-// components: {
-// },
+  name: "top-bar",
 })
 export default class Home extends Vue {}
 </script>
 <style lang='scss' scoped>
-.topbar{
+@import "@/assets/css/variable.scss";
+.topbar {
   height: 60px;
-  padding: 0 20px;
+  padding: 0;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-}
-.back{
-  i{
-    padding-right: 15px;
-  }
-  i:first-child{
-    font-weight: 700;
-  }
-}
-.center-con{
-  display: flex;
-  justify-content: center;
-  .navbar{
-    width: 100%;
-    span{
-      padding-right: 20px;
+  background-color: var(--colorBackgroundBase, $colorBackgroundBase);
+  .back {
+    i {
+      padding-right: 15px;
+    }
+    i:first-child {
+      font-weight: 700;
     }
   }
-  .search{
-    margin-left:100px;
-    .el-input__inner{
-      background-color: #0b0b0c;
+  .center-con {
+    display: flex;
+    justify-content: center;
+    .navbar {
+      width: 100%;
+      span {
+        padding-right: 20px;
+      }
+    }
+    .search {
+      margin-left: 100px;
     }
   }
 }
-
 </style>
