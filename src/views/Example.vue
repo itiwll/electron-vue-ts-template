@@ -96,19 +96,19 @@ export default class Example extends Vue {
   background-color: var(--colorBackgroundBase);
 
   h1 {
-    color: var(--colorRegular);
+    color: var(--colorTextPrimary);
   }
   p.regular {
-    color: lightness(var(--colorTextPrimary), var(--lightnessTextRegular));
+    color: var(--colorTextRegular);
   }
   p.secondary {
-    color: lightness(var(--colorTextPrimary), var(--lightnessTextSecondary));
+    color: var(--colorTextSecondary);
   }
   p.placeholder {
-    color: lightness(var(--colorTextPrimary), var(--lightnessTextPlaceholder));
+    color: var(--colorTextPlaceholder);
   }
   p.disabled {
-    color: lightness(var(--colorTextPrimary), var(--lightnessTextDisabled));
+    color: var(--colorTextDisabled);
   }
 }
 </style>
