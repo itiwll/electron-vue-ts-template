@@ -41,7 +41,7 @@ export default class Home extends Vue {}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--colorBackgroundBase, $colorBackgroundBase);
+  background-color: var(--colorBackgroundBase);
   .back {
     i {
       padding-right: 15px;

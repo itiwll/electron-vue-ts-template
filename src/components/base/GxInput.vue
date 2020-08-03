@@ -42,7 +42,6 @@ textarea.el-textarea__inner {
   color: var(--colorTextPrimary);
   background-color: var(--colorBackgroundBase);
   &:focus {
-    // color: var(--colorPrimary);
     border-color: var(--colorPrimary);
   }
 }
@@ -53,7 +52,6 @@ textarea.el-textarea__inner {
       color: var(--colorTextPrimary);
       background-color: var(--colorBackgroundBase);
       &:focus {
-        // color: var(--colorPrimary);
         border-color: var(--colorPrimary);
       }
     }
@@ -72,7 +70,6 @@ textarea.el-textarea__inner {
     color: var(--colorTextDisabled);
     background-color: var(--colorBackgroundDisabled);
     &:focus {
-      // color: var(--colorPrimary);
       border-color: var(--colorPrimary);
     }
   }

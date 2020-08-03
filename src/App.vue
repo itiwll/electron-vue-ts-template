@@ -44,7 +44,7 @@ export default class App extends Vue {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--colorFrontDefault);
+  color: var(--colorTextRegular);
   height: 100%;
 
   .fade-enter-active,

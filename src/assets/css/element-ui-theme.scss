@@ -1,9 +1,25 @@
 /* Element UI 样式覆盖 */
 /* 改变主题色变量 */
-$--color-primary: $colorPrimary;
+// $--color-primary: $colorPrimary;
 
 /* 改变 icon 字体路径变量，必需 */
-$--font-path: "~element-ui/lib/theme-chalk/fonts";
+// $--font-path: "~element-ui/lib/theme-chalk/fonts";
 
 /* Eleement UI 主题 */
-@import "~element-ui/packages/theme-chalk/src/index";
+// @import "~element-ui/packages/theme-chalk/src/index";
+
+@mixin popper($pos) {
+  div.el-popper[x-placement^="#{$pos}"] {
+    .popper__arrow {
+      border-#{$pos}-color: var(--colorBorderRegular);
+      &:after {
+        border-#{$pos}-color: var(--colorBackgroundBase);
+      }
+    }
+  }
+}
+
+@include popper(top);
+@include popper(bottom);
+@include popper(left);
+@include popper(right);

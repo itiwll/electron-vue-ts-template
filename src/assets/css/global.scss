@@ -1,9 +1,6 @@
 // Style 变量
 @import "./variable.scss";
 
-/* Element UI */
-// @import "./element-ui-theme.scss";
-
 @import "./function.scss";
 @import "./mixin.scss";
 
@@ -57,13 +54,13 @@
     --colorBackgroundRegular,
     220,
     0%,
-    95%
+    98%
   ); // 常用背景颜色
   @include defineColorHSL(
     --colorBackgroundDisabled,
     220,
     0%,
-    90%
+    97%
   ); // 禁用背景颜色
 }
 
@@ -140,3 +137,6 @@ body {
     }
   }
 }
+
+/* Element UI */
+@import "./element-ui-theme.scss";

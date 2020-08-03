@@ -3,8 +3,8 @@
     :class="className"
     v-bind="$attrs"
     v-on="$listeners"
-    :value="$attrs.value"
-    @input="v => $emit('input', v)"
+    :value="currentValue"
+    @input="input"
   >
     <template v-for="slot in Object.keys($scopedSlots)" :slot="slot" slot-scope="scope">
       <slot :name="slot" v-bind="scope" />
@@ -22,40 +22,54 @@ Vue.use(Select);
   name: "gx-select",
 })
 export default class GxSelect extends Vue {
+  currentValue = "";
+
   get className() {
     return `gx-select ${this.$attrs.class || ""}`;
+  }
+
+  input(v: string) {
+    this.currentValue = v;
+    this.$emit("input", v);
   }
 }
 
 export const GxOption = Option;
 </script>
-<style lang="scss" scoped>
-@import "@/assets/css/variable.scss";
-.gx-select {
-  /deep/ input {
-    color: var(--colorPrimary, $colorPrimary);
-
-    &.el-input__inner:focus {
-      border-color: var(--colorPrimary, $colorPrimary);
-    }
-  }
-}
-</style>
 <style lang="scss">
 @import "@/assets/css/variable.scss";
-.el-select-dropdown {
-  background-color: var(--colorBackgroundBase, $colorBackgroundBase);
-  border-color: var(--colorBorderBase, $colorBorderBase);
-}
-.el-select-dropdown__item {
-  color: var(--colorTextPrimary, $colorTextPrimary);
-  &.selected {
-    color: var(--colorPrimary, $colorPrimary);
+.el-select-dropdown,
+.el-select-dropdown.is-multiple {
+  background-color: var(--colorBackgroundBase);
+  border-color: var(--colorBorderRegular);
+  .el-select-group__title {
+    color: var(--colorTextPrimary);
   }
-}
+  .el-select-group__wrap:not(:last-of-type)::after {
+    background-color: var(--colorBorderRegular);
+  }
+  .el-select-dropdown__empty {
+    color: var(--colorInfo);
+  }
 
-.el-select-dropdown__item.hover,
-.el-select-dropdown__item:hover {
-  background-color: var(--colorBackgroundRegular, $colorBackgroundRegular);
+  .el-select-dropdown__item {
+    color: var(--colorTextPrimary);
+    background-color: var(--colorBackgroundBase);
+    &.selected,
+    &:hover,
+    &.selected:hover {
+      color: var(--colorPrimary);
+      background-color: var(--colorBackgroundRegular);
+    }
+
+    &.is-disabled {
+      color: var(--colorTextDisabled);
+      background-color: var(--colorBackgroundDisabled);
+      &:hover {
+        color: var(--colorTextDisabled);
+        background-color: var(--colorBackgroundDisabled);
+      }
+    }
+  }
 }
 </style>

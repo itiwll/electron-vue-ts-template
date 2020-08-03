@@ -24,16 +24,16 @@ export default class Home extends Vue {}
 <style lang='scss' scope>
 @import "@/assets/css/variable.scss";
 .layout {
-  background-color: var(--colorPrimary, $colorPrimary);
+  background-color: var(--colorPrimary);
   height: 100%;
   .el-header {
-    background-color: var(--colorBackgroundBase, $colorBackgroundBase);
+    background-color: var(--colorBackgroundBase);
     line-height: 60px;
     border-radius: 15px 0 0 0;
   }
 
   .el-main {
-    background-color: var(--colorBackgroundRegular, $colorBackgroundRegular);
+    background-color: var(--colorBackgroundRegular);
     text-align: center;
     border-radius: $borderRadius 0 0 $borderRadius;
     padding: 0;
