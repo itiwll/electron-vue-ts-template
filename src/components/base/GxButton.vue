@@ -1,5 +1,5 @@
 <template>
-  <el-button v-bind="$attrs" @click="clickButton" :class="className">
+  <el-button v-bind="$attrs" :class="className">
     <slot></slot>
   </el-button>
 </template>

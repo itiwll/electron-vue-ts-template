@@ -37,11 +37,47 @@ export default class GxInput extends Vue {
 <style lang="scss">
 @import "@/assets/css/variable.scss";
 /* 覆盖 Element UI */
-input.el-input__inner {
-  color: var(--colorPrimary, $colorPrimary);
-  background-color: var(--colorBackgroundBase, $colorBackgroundBase);
+input.el-input__inner,
+textarea.el-textarea__inner {
+  color: var(--colorTextPrimary);
+  background-color: var(--colorBackgroundBase);
   &:focus {
-    border-color: var(--colorPrimary, $colorPrimary);
+    // color: var(--colorPrimary);
+    border-color: var(--colorPrimary);
   }
 }
+
+@mixin color($type) {
+  .el-#{$type} {
+    .el-#{$type}__inner {
+      color: var(--colorTextPrimary);
+      background-color: var(--colorBackgroundBase);
+      &:focus {
+        // color: var(--colorPrimary);
+        border-color: var(--colorPrimary);
+      }
+    }
+    .el-input__count {
+      color: var(--colorTextRegular);
+      background-color: transparent;
+      @if $type== input {
+        .el-#{$type}__count-inner {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .el-#{$type}.is-disabled .el-#{$type}__inner {
+    color: var(--colorTextDisabled);
+    background-color: var(--colorBackgroundDisabled);
+    &:focus {
+      // color: var(--colorPrimary);
+      border-color: var(--colorPrimary);
+    }
+  }
+}
+
+@include color(input);
+@include color(textarea);
 </style>

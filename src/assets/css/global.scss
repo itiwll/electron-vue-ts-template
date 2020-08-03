@@ -57,13 +57,13 @@
     --colorBackgroundRegular,
     220,
     0%,
-    80%
+    95%
   ); // 常用背景颜色
   @include defineColorHSL(
     --colorBackgroundDisabled,
     220,
     0%,
-    60%
+    90%
   ); // 禁用背景颜色
 }
 
