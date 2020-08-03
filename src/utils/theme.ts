@@ -5,7 +5,7 @@
 import lightThemeColor from '@/assets/css/color-light.scss';
 import darkThemeColor from '@/assets/css/color-dark.scss';
 
-const variableesStyleTagIdName = 'theme-ui-style';
+// const variableesStyleTagIdName = 'theme-ui-style';
 
 /**
  * @description: 获取系统主题倾向
@@ -41,13 +41,13 @@ export const applyTheme = (theme: string) => {
   const resultTheme = theme === 'auto' ? getAutoThemeName() : theme;
   if (document.body.getAttribute('ui-theme') === resultTheme) return;
   console.log('应用皮肤', resultTheme);
-  let styleElement = document.getElementById(variableesStyleTagIdName);
-  if (!styleElement) {
-    styleElement = document.createElement('style');
-    styleElement.id = variableesStyleTagIdName;
-    document.head.appendChild(styleElement);
-  }
-  styleElement.innerText = `:root { ${formatCSSVariables(resultTheme)} }`;
+  // let styleElement = document.getElementById(variableesStyleTagIdName);
+  // if (!styleElement) {
+  //   styleElement = document.createElement('style');
+  //   styleElement.id = variableesStyleTagIdName;
+  //   document.head.appendChild(styleElement);
+  // }
+  // styleElement.innerText = `:root { ${formatCSSVariables(resultTheme)} }`;
   document.body.setAttribute('ui-theme', resultTheme);
 }
 

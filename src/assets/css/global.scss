@@ -1,31 +1,142 @@
 // Style 变量
 @import "./variable.scss";
 
-/* Element UI End */
-@import "./element-ui-theme.scss";
+/* Element UI */
+// @import "./element-ui-theme.scss";
 
-// @media (prefers-color-scheme: light) {
-//   :root {
-//     --colorPrimary: $colorPrimary;
-//   }
-// }
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --colorPrimary: $darkColorPrimary;
-//   }
-// }
+@import "./function.scss";
+@import "./mixin.scss";
+
+/* 默认 亮色模式 css 变量 */
+:root,
+[ui-theme="light"] {
+  /* 主题颜色 */
+  @include defineColorHSL(--colorPrimary, 220, 99.2%, 46.5%);
+  @include defineColorHSL(--colorPrimaryLighter, 220, 99.2%, 66.5%);
+  @include defineColorHSL(--colorPrimaryDarker, 220, 99.2%, 26.5%);
+
+  /* 实用色彩 */
+  // 成功颜色
+  @include defineColorHSL(--colorSuccess, 100, 54%, 49%);
+  @include defineColorHSL(--colorSuccessLighter, 100, 53%, 59%);
+  @include defineColorHSL(--colorSuccessDarker, 100, 52%, 69%);
+  // 警告颜色
+  @include defineColorHSL(--colorWarning, 36, 77%, 57%);
+  @include defineColorHSL(--colorWarningLighter, 36, 77%, 66%);
+  @include defineColorHSL(--colorWarningDarker, 36, 77%, 57%);
+  // 危险颜色
+  @include defineColorHSL(--colorDanger, 0, 87%, 69%);
+  @include defineColorHSL(--colorDangerLighter, 0, 87%, 75%);
+  @include defineColorHSL(--colorDangerDarker, 0, 87%, 69%);
+  // 信息颜色
+  @include defineColorHSL(--colorInfo, 214, 4%, 58%);
+  @include defineColorHSL(--colorInfoLighter, 214, 4%, 66%);
+  @include defineColorHSL(--colorInfoDarker, 214, 4%, 66%);
+
+  /* 文字颜色 */
+  @include defineColorHSL(--colorTextPrimary, 220, 3%, 10%); // 主要文字颜色
+  @include defineColorHSL(--colorTextRegular, 220, 3%, 20%); // 常用文字颜色
+  @include defineColorHSL(--colorTextSecondary, 220, 3%, 40%); // 次要文字颜色
+  @include defineColorHSL(--colorTextPlaceholder, 220, 3%, 60%); // 占位文字颜色
+  @include defineColorHSL(--colorTextDisabled, 220, 3%, 80%); // 禁用文字颜色
+  @include defineColorHSL(
+    --colorTextWithBackground,
+    220,
+    3%,
+    100%
+  ); // 彩底文字颜色
+
+  /* 边框颜色 */
+  @include defineColorHSL(--colorBorderBase, 220, 17%, 50%); // 主要边框颜色
+  @include defineColorHSL(--colorBorderRegular, 220, 17%, 88%); // 常用边框颜色
+  @include defineColorHSL(--colorBorderDisabled, 220, 17%, 70%); // 禁用边框颜色
+
+  /* 背景颜色 */
+  @include defineColorHSL(--colorBackgroundBase, 220, 0%, 100%); // 基本背景颜色
+  @include defineColorHSL(
+    --colorBackgroundRegular,
+    220,
+    0%,
+    80%
+  ); // 常用背景颜色
+  @include defineColorHSL(
+    --colorBackgroundDisabled,
+    220,
+    0%,
+    60%
+  ); // 禁用背景颜色
+}
+
+/* 亮色模式 css 变量 */
+[ui-theme="dark"] {
+  /* 主题颜色 */
+  @include defineColorHSL(--colorPrimary, 220, 99.2%, 46.5%);
+  @include defineColorHSL(--colorPrimaryLighter, 220, 99.2%, 66.5%);
+  @include defineColorHSL(--colorPrimaryDarker, 220, 99.2%, 26.5%);
+
+  /* 实用色彩 */
+  // 成功颜色
+  @include defineColorHSL(--colorSuccess, 100, 54%, 49%);
+  @include defineColorHSL(--colorSuccessLighter, 100, 53%, 59%);
+  @include defineColorHSL(--colorSuccessDarker, 100, 52%, 69%);
+  // 警告颜色
+  @include defineColorHSL(--colorWarning, 36, 77%, 57%);
+  @include defineColorHSL(--colorWarningLighter, 36, 77%, 66%);
+  @include defineColorHSL(--colorWarningDarker, 36, 77%, 57%);
+  // 危险颜色
+  @include defineColorHSL(--colorDanger, 0, 87%, 69%);
+  @include defineColorHSL(--colorDangerLighter, 0, 87%, 75%);
+  @include defineColorHSL(--colorDangerDarker, 0, 87%, 69%);
+  // 信息颜色
+  @include defineColorHSL(--colorInfo, 214, 4%, 58%);
+  @include defineColorHSL(--colorInfoLighter, 214, 4%, 66%);
+  @include defineColorHSL(--colorInfoDarker, 214, 4%, 66%);
+
+  /* 文字颜色 */
+  @include defineColorHSL(--colorTextPrimary, 220, 3%, 90%); // 主要文字颜色
+  @include defineColorHSL(--colorTextRegular, 220, 3%, 80%); // 常用文字颜色
+  @include defineColorHSL(--colorTextSecondary, 220, 3%, 60%); // 次要文字颜色
+  @include defineColorHSL(--colorTextPlaceholder, 220, 3%, 40%); // 占位文字颜色
+  @include defineColorHSL(--colorTextDisabled, 220, 3%, 20%); // 禁用文字颜色
+  @include defineColorHSL(
+    --colorTextWithBackground,
+    220,
+    3%,
+    0%
+  ); // 彩底文字颜色
+
+  /* 边框颜色 */
+  @include defineColorHSL(--colorBorderBase, 220, 17%, 100%); // 主要边框颜色
+  @include defineColorHSL(--colorBorderRegular, 220, 17%, 90%); // 常用边框颜色
+  @include defineColorHSL(--colorBorderDisabled, 220, 17%, 30%); // 禁用边框颜色
+
+  /* 背景颜色 */
+  @include defineColorHSL(--colorBackgroundBase, 220, 0%, 0%); // 基本背景颜色
+  @include defineColorHSL(
+    --colorBackgroundRegular,
+    220,
+    0%,
+    20%
+  ); // 常用背景颜色
+  @include defineColorHSL(
+    --colorBackgroundDisabled,
+    220,
+    0%,
+    40%
+  ); // 禁用背景颜色
+}
 
 body {
-  background-color: var(--colorBackgroundRegular);
-  color: var(--colorTextPrimary);
+  background-color: var(--colorBackgroundBase);
+  color: var(--colorTextRegular);
 }
 
 // 输入框光标颜色
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
-@supports (-webkit-mask: none) and (not (cater-color: $colorPrimary)) {
+@supports (-webkit-mask: none) and (not (cater-color: var(--colorPrimary))) {
   .el-input {
     input {
-      color: $colorPrimary;
+      color: var(--colorPrimary);
     }
   }
 }

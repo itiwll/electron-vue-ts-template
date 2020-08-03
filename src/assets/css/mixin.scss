@@ -1,0 +1,28 @@
+// 定义 css 颜色变量
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+  #{$color}H: #{$hue};
+  #{$color}S: #{$saturation};
+  #{$color}L: #{$lightness};
+}
+
+@mixin buttonColor($type) {
+  color: var(--colorTextWithBackground);
+  background-color: var(--color#{$type});
+  border-color: var(--color#{$type});
+  &:hover,
+  &:focus {
+    background-color: var(--color#{$type}Lighter);
+  }
+
+  &.is-plain {
+    background: transparent;
+    color: var(--color#{$type});
+    &:hover,
+    &:focus {
+      background-color: var(--color#{$type}Lighter);
+      border-color: var(--color#{$type}Lighter);
+      color: var(--colorTextWithBackground);
+    }
+  }
+}
