@@ -94,6 +94,49 @@
       />
     </gx-select>
     <h1>GxTag</h1>
+    <h1>GxPopover</h1>
+    <p class="gx-popover">
+      <gx-popover
+        placement="top-start"
+        title="标题"
+        width="200"
+        trigger="hover"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+      >
+        <gx-button slot="reference">hover 激活</gx-button>
+      </gx-popover>
+
+      <gx-popover
+        placement="bottom"
+        title="标题"
+        width="200"
+        trigger="click"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+      >
+        <gx-button slot="reference">click 激活</gx-button>
+      </gx-popover>
+
+      <gx-popover
+        ref="popover"
+        placement="right"
+        title="标题"
+        width="200"
+        trigger="focus"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+      ></gx-popover>
+      <gx-button v-popover:popover>focus 激活</gx-button>
+
+      <gx-popover
+        placement="bottom"
+        title="标题"
+        width="200"
+        trigger="manual"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+        v-model="popoverValue"
+      >
+        <gx-button slot="reference" @click=" popoverValue = !popoverValue">手动激活</gx-button>
+      </gx-popover>
+    </p>
   </div>
 </template>
 <script lang="ts">
@@ -103,11 +146,14 @@ import { AppModule } from "@/store/app";
 import GxSelect, { GxOption } from "@/components/base/GxSelect.vue";
 import GxInput from "@/components/base/GxInput.vue";
 import GxButton from "@/components/base/GxButton.vue";
+import GxPopover from "@/components/base/GxPopover";
 
 @Component({
-  components: { GxOption, GxSelect, GxInput, GxButton },
+  components: { GxOption, GxSelect, GxInput, GxButton, GxPopover },
 })
 export default class Example extends Vue {
+  popoverValue = false;
+
   themeList = [
     { label: "自动", value: "auto" },
     {
@@ -202,6 +248,12 @@ export default class Example extends Vue {
 
   .gx-select + .gx-select {
     margin-left: $gutter;
+  }
+
+  .gx-popover {
+    & > * + * {
+      margin-left: $gutter;
+    }
   }
 }
 </style>

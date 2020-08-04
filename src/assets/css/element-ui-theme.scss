@@ -8,6 +8,14 @@
 /* Eleement UI 主题 */
 // @import "~element-ui/packages/theme-chalk/src/index";
 
+div.el-popover {
+  background-color: var(--colorBackgroundBase);
+  color: var(--colorTextRegular);
+  .el-popover__title {
+    color: var(--colorTextPrimary);
+  }
+}
+
 @mixin popper($pos) {
   div.el-popper[x-placement^="#{$pos}"] {
     .popper__arrow {
