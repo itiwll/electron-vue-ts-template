@@ -2,10 +2,6 @@
  * @Author: eson
  * @Description: 主题工具
  */
-import lightThemeColor from '@/assets/css/color-light.scss';
-import darkThemeColor from '@/assets/css/color-dark.scss';
-
-// const variableesStyleTagIdName = 'theme-ui-style';
 
 /**
  * @description: 获取系统主题倾向
@@ -15,23 +11,6 @@ const getAutoThemeName = () => {
   return window.matchMedia('screen and (prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
-
-/**
- * @description: 获取 CSS 字符化主题颜色变量 
- * @param {string} theme
- * @return {object} themeColors
- */
-const formatCSSVariables = (theme: string) => {
-  let themeColors: { [variable: string]: string };
-  if (theme === 'dark') {
-    themeColors = darkThemeColor;
-  } else {
-    themeColors = lightThemeColor;
-  }
-  return Object.keys(themeColors).map(
-    cssVar => (`--${cssVar}:${themeColors[cssVar]}`)
-  ).join(';');
-}
 
 /**
  * @description: 应用皮肤
@@ -52,7 +31,4 @@ export const applyTheme = (theme: string) => {
 }
 
 
-
-
-
-export default { applyTheme, getAutoThemeName, formatCSSVariables };
+export default { applyTheme, getAutoThemeName };
